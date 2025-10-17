@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./Headline.module.css";
+import styles from "@/components/Headline/Headline.module.css";
 
 type HeadlineProps = {
    page: "page" | "about";
@@ -10,7 +10,6 @@ export function Headline({
    page, 
    children: Children,
 }: HeadlineProps) {
-   console.log(page);
    return (
       <div>
          <Image

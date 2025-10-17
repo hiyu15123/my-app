@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/components/Header.module.css";
+import styles from "@/components/Header/Header.module.css";
 
 export function Header() {
    return (
