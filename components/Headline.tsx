@@ -1,7 +1,12 @@
 import Image from "next/image";
 import styles from "@/app/page.module.css";
+import { Head } from "next/document";
 
-export function Headline(props) {
+type HeadlineProps = {
+   page: "page" | "about";
+};
+
+export function Headline({ page }: HeadlineProps) {
    return (
       <div>
          <Image
@@ -12,12 +17,12 @@ export function Headline(props) {
             height={38}
             priority
          />
-         <h1 className={styles.title}>{props.page} page</h1>
+         <h1 className={styles.title}>{page} page</h1>
          <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
             <li className="mb-2 tracking-[-.01em]">
                Get started by editing{" "}
                <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-               app/{props.page}.tsx
+               app/{page}.tsx
                </code>
                .
             </li>
