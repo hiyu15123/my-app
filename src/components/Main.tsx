@@ -1,8 +1,10 @@
 import { Links } from "@/components/Links";
 import { Headline } from "@/components/Headline/Page";
+import { Button } from "@/components/Button";
 
 type MainProps = {
    page: "page" | "about";
+   onClick?: () => void;
 };
 
 export function Main({ page }: MainProps) {
@@ -15,6 +17,7 @@ export function Main({ page }: MainProps) {
                app/{page}.tsx
             </code>
          </Headline>
+         <Button />
          <Links />
       </main>
    );
