@@ -1,6 +1,6 @@
 import { Links } from "@/components/Links";
 import { Headline } from "@/components/Headline/Page";
-import { Button } from "@/components/Button";
+import { Button } from "@/components/Button"
 
 type MainProps = {
    page: "page" | "about";

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import React, { useCallback } from "react";
 
 export function Button() {
    const handleClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -14,3 +14,6 @@ export function Button() {
       </a>
    )
 }
+
+
+
