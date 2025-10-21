@@ -10,7 +10,7 @@ export function Button() {
 
    const handleClick = useCallback(() => {
       if (count < 10) {
-         setCount((count) => count + 1);
+         setCount((prevCount) => prevCount + 1);
       }
    }, [count]);
 
@@ -23,7 +23,7 @@ export function Button() {
    }, []);
 
    const handleDisplay = useCallback(() => {
-      setIsShow((isShow) => !isShow);
+      setIsShow((prevIsShow) => !prevIsShow);
    }, []);
 
    return (
