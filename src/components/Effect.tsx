@@ -1,14 +1,18 @@
 "use client";
 import { useEffect } from "react";
 
-export function Effect() {
+type EffectProps = {
+   count: number;
+};
+
+export function Effect({ count }: EffectProps) {
    useEffect(() => {
+      console.log(`マウント時: ${count}`)
       document.body.style.backgroundColor = "lightblue";
-      console.log("マウントされました: 背景色がライトブルーに設定されました");
       return () => {
+         console.log(count)
          document.body.style.backgroundColor = "";
-         console.log("マウント解除されました: 背景色が元に戻されました");
       };
-   }, []);
+   }, [count]);
    return null;
-} 
+}
