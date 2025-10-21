@@ -1,17 +1,19 @@
 "use client";
 
-import React, { useCallback } from "react";
+import React, { use, useCallback } from "react";
+import { useState } from "react";
 
 export function Button() {
-   const handleClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
-      console.log(e.currentTarget.href)
-      e.preventDefault();
-   }, []);
+   const [foo, setFoo] =  useState(1);
+
+   const handleClick = (() => {
+      setFoo((foo) => foo + 1);
+   });
    return (
-      <a href="/about"
-         onClick={handleClick}>
-         ボタン
-      </a>
+      <>
+         <button onClick={handleClick}>ボタン</button>
+         <h2>{foo}</h2>
+      </>
    )
 }
 
