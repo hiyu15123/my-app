@@ -2,17 +2,19 @@
 import { useEffect } from "react";
 
 type EffectProps = {
-   count: number;
+   count?: number;
 };
 
-export function Effect({ count }: EffectProps) {
+const useBgLightBlue = () => {
    useEffect(() => {
-      console.log(`マウント時: ${count}`)
-      document.body.style.backgroundColor = "lightblue";
-      return () => {
-         console.log(count)
-         document.body.style.backgroundColor = "";
-      };
-   }, [count]);
+         document.body.style.backgroundColor = "lightblue";
+         return () => {
+            document.body.style.backgroundColor = "";
+         };
+   }, []);
+}
+
+export function Effect({ count = 0 }: EffectProps) {
+   useBgLightBlue();
    return null;
 }
